@@ -1,0 +1,35 @@
+body,html
+{
+    background-color: #4D5786;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% vertical */
+    align-items: center;
+    align-content: center;
+    font-family: 'Volkhov';font-size: 20px;
+    animation: fadein 1.5s;
+}
+
+.menu
+{
+    height: 80px;
+    width: 100%; /* LARGURA */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    background-color: white;
+}
+
+#logo
+{
+    padding-top: -105px;
+}
