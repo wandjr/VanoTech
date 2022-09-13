@@ -47,6 +47,24 @@ body,html
     color: white;
 }
 
+.botao_selecionado
+{
+    color: #042653;
+    border-style: none;
+    background-color: #042653;
+    color: white;
+    font-size: 15px;
+    height: 30px;
+}
+
+.titulo_recursos
+{
+    margin-top: 100px;
+    color: silver;
+    font-size: 50px;
+    font-family: 'Inter';
+    text-align: left;
+}
 
 .titulo
 {
@@ -54,6 +72,7 @@ body,html
     color: silver;
     font-size: 50px;
     font-family: 'Inter';
+    text-align: center;
 }
 
 .conteudo
@@ -68,13 +87,21 @@ body,html
 .paragrafos
 {
     text-indent: 40px;
-    text-align: justify;
+    text-align: right;
+    width: 800px;
+}
+
+#paragrafos_servico
+{
+    text-indent: 40px;
+    text-align: center;
     width: 1200px;
 }
 
 .texto
 {
-    color: silver; font-size: 28px;
+    color: silver; 
+    font-size: 28px;
 }
 
 #carrossel
@@ -86,4 +113,11 @@ body,html
     justify-content: center;
     width: 100%;
     height: 640px;
+}
+
+#recursos_humanos
+{
+    background-color: yellow;
+    width: 1000px;
+    height: 500px;
 }
