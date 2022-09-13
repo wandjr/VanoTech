@@ -5,11 +5,11 @@ function showSlides() {
   var i;
   var slides;
 
-  for (i = 1; i < 5; i++) {
+  for (i = 1; i < 6; i++) {
     $("#carrossel"+i).hide(); 
   }
   slideIndex++;
-  if (slideIndex > 4) {slideIndex = 1}    
+  if (slideIndex > 5) {slideIndex = 1}    
 
   $("#carrossel"+slideIndex).show(4000);  
 
