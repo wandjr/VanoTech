@@ -174,3 +174,9 @@ a
     text-align: center;
     border-radius: 10px;
 }
+
+.botao_cadastro
+{
+    font-size: 20px;
+    border-radius: 5px;
+}
