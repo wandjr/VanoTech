@@ -169,17 +169,16 @@ a
     color: #0B06FF;
 }
 
-#caixa_login
-{
-    margin-top: 10px;
-    background-color: white;
-    width: 400px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border-radius: 10px;
+body {
+
+    padding: 0;
+
+    margin: 0;
+
+    background-color: #042653;
 }
+
+
 
 .botao_cadastro
 {
