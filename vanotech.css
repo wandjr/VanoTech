@@ -68,7 +68,7 @@ body,html
 
 .titulo
 {
-    margin-top: 100px;
+    margin-top: 10px;
     color: silver;
     font-size: 50px;
     font-family: 'Inter';
@@ -87,8 +87,12 @@ body,html
 .paragrafos
 {
     text-indent: 40px;
-    text-align: right;
+    text-align: justify;
     width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 47em;
+    margin-top: 10px;
 }
 
 #paragrafos_servico
@@ -112,7 +116,7 @@ body,html
     align-content: center;
     justify-content: center;
     width: 100%;
-    height: 640px;
+    height: 540px;
 }
 
 #recursos_humanos
