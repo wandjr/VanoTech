@@ -62,8 +62,10 @@ body,html
     margin-top: 100px;
     color: silver;
     font-size: 50px;
+    position: absolute;
     font-family: 'Inter';
-    text-align: left;
+    text-align: center;
+    background-color: yellow;
 }
 
 .titulo
@@ -87,7 +89,7 @@ body,html
 .paragrafos
 {
     text-indent: 40px;
-    text-align: right;
+    text-align: justify;
     width: 800px;
 }
 
@@ -117,9 +119,9 @@ body,html
 
 #recursos_humanos
 {
-    background-color: yellow;
-    width: 1000px;
-    height: 500px;
+    position: relative;
+    width: 1500px;
+    height: 435px;
 }
 
 .cadastro
@@ -173,4 +175,18 @@ a
     flex-direction: column;
     text-align: center;
     border-radius: 10px;
+}
+
+.paragrafos1
+{
+    position: absolute;
+    left: 500px;
+    top: 120px;
+    text-indent: 40px;
+    text-align: justify;
+
+    width: 800px;
+    font-family: 'Inter';
+    color: silver;
+    font-size: 35px;
 }
