@@ -192,6 +192,18 @@ body {
  
 }
 
+.card {
+ 
+    background-color: rgba(19, 19, 19, 0.3);
+ 
+    padding: 40px;
+ 
+    border-radius: 2px;
+ 
+    width:280px;
+ 
+}
+
 
 .botao_cadastro
 {
