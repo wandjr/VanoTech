@@ -242,6 +242,34 @@ body {
  
 }
 
+.card-content-area {
+ 
+    display: flex;
+ 
+    flex-direction: column;
+ 
+    padding:10px 0;
+ 
+}
+ 
+.card-content-area input {
+ 
+    margin-top: 10px;
+ 
+    padding:0 5px;
+ 
+    background-color: transparent;
+ 
+    border:none;
+ 
+    border-bottom: 1px solid #e1e1e1;
+ 
+    outline: none;
+ 
+    color: #fff;
+ 
+}
+
 
 
 .botao_cadastro
