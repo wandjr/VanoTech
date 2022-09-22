@@ -204,6 +204,35 @@ body {
  
 }
 
+.card-header {
+ 
+    padding-bottom: 50px;
+ 
+    opacity: 0.8;
+ 
+    color: #fff;
+ 
+}
+ 
+.card-header::after {
+ 
+    content: "";
+ 
+    width: 70px;
+ 
+    height: 1px;
+ 
+    background-color: #fff;
+ 
+    display: block;
+ 
+    margin-top: -17px;
+ 
+    margin-left: -5px;
+ 
+}
+
+
 
 .botao_cadastro
 {
