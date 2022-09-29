@@ -13,9 +13,9 @@
     $cpf = $_POST["cpf"];
     $cidade = $_POST["cidade"];
     $estado = $_POST["estado"];
-    $data_de_nascimento = $_POST["data_de_nascimento"];
+    $data_nascimento = $_POST["data_nascimento"];
 
-    $comando = $pdo -> prepare("INSERT INTO usuarios(email,nome,sobrenome,senha,estado,cidade,bairro,rua,numero,telefone,cpf,data_de_nascimento) VALUES(:email,:nome,:sobrenome,:senha,:estado,:cidade,:bairro,:rua,:numero,:telefone,:cpf,:data_de_nascimento)");
+    $comando = $pdo -> prepare("INSERT INTO usuario(email,nome,sobrenome,senha,estado,cidade,bairro,rua,numero,telefone,cpf,data_nascimento) VALUES(:email,:nome,:sobrenome,:senha,:estado,:cidade,:bairro,:rua,:numero,:telefone,:cpf,:data_nascimento)");
     $comando->bindValue(":email", $email);
     $comando->bindValue(":nome", $nome);
     $comando->bindValue(":sobrenome", $sobrenome);
@@ -27,8 +27,9 @@
     $comando->bindValue(":numero", $numero);
     $comando->bindValue(":telefone", $telefone);
     $comando->bindValue(":cpf", $cpf);
-    $comando->bindValue(":data_de_nascimento", $data_de_nascimento);
+    $comando->bindValue(":data_nascimento", $data_nascimento);
+    
     $comando->execute();
 
-    echo("DADOS GRAVADOS");
+    header("Location:login.html");
 ?>
