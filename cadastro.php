@@ -130,7 +130,7 @@
 
         <div class="cadastro">
             Data de Nascimento
-            <input type="date" name="data_de_nascimento" class="caixa_texto" placeholder="22/06/1992">
+            <input type="date" name="data_nascimento" class="caixa_texto" placeholder="22/06/1992">
         </div>
         <br>
 
