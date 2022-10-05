@@ -13,7 +13,7 @@
         if($comando->rowCount()== 1){
             $resultado = $comando->fetch();
             if ($resultado['senha']== MD5($senha)){
-                    header("location:perfil.html");
+                    header("location:perfil.php?email=$email");
             }else{
                 echo("Email ou senha inválidos");
             }
