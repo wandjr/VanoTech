@@ -15,3 +15,18 @@ function showSlides() {
 
   setTimeout(showSlides, 6000); // Change image every 2 seconds
 }
+
+function validar()
+{
+  if(email.value=="")
+  {
+    alert("Digite um email");
+  }
+}
+
+function Alterar()
+{
+  formulario.action="update.php";
+
+  formulario.submit();
+}
