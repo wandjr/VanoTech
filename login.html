@@ -17,10 +17,20 @@
     </head>
 
     <body>
+
+            <div class="menu">
+                    <img src="imagem/logo.png" id="logo" width="70px" height="70px">
+                    <a href="home.html"><button class="botao">HOME</button></a>
+                    <a href="servicos.html"><button class="botao">SERVIÇOS</button></a>
+                    <a href="trabalhe_conosco.html"><button class="botao">TRABALHE CONOSCO</button></a>
+                    <a href="simulacao_de_Contrato.html"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
+                    <a href="contato.html"><button class="botao">CONTATO</button></a>
+                    <a href="perfil.html"> <button class="botao">PERFIL</button></a>
+            </div>
  
             <div id="login">
      
-                <form class="card">
+                <form class="card" method="POST" action="login.php">
      
                     <div class="card-header">
      
@@ -34,7 +44,7 @@
      
                             <label for="usuario">E-mail</label>
      
-                            <input type="text" id="usuario" autocomplete="off" placeholder="Pedro@gmail.com">
+                            <input type="text" id="usuario" autocomplete="off" placeholder="Pedro@gmail.com" name="email">
 
      
                         </div>
@@ -43,7 +53,7 @@
      
                             <label for="password">Senha</label>
      
-                            <input type="password" class="text" placeholder="Senha123" autocomplete="off">
+                            <input type="password" class="text" placeholder="Senha123" autocomplete="off" name="senha">
      
                         </div>
      
