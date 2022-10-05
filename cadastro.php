@@ -30,7 +30,7 @@
     <form action="inserir.php" method="post">
         <div class="cadastro">
             E-mail
-            <input type="text" name="email" class="caixa_texto" placeholder="pedro@gmail.com">
+            <input type="email" id="email" name="email" class="caixa_texto" placeholder="pedro@gmail.com">
         </div>
         <br>
 
@@ -61,64 +61,7 @@
 
         <div class="cadastro">
             Telefone
-            <input type="text" name="telefone" class="caixa_texto" placeholder="(47) 99593-9247">
-        </div>
-        <br>
-
-        <div class="cadastro">
-            Estado
-            <select class="caixa_texto" name="estado">
-                <option>RS</option>
-                <option>SC</option>
-                <option>PR</option>
-                <option>SP</option>
-                <option>ES</option>
-                <option>RJ</option>
-                <option>MG</option>
-                <option>MS</option>
-                <option>MT</option>
-                <option>GO</option>
-                <option>DF</option>
-                <option>RO</option>
-                <option>TO</option>
-                <option>BA</option>
-                <option>AL</option>
-                <option>PE</option>
-                <option>PA</option>
-                <option>RN</option>
-                <option>CE</option>
-                <option>PI</option>
-                <option>MA</option>
-                <option>PA</option>
-                <option>AP</option>
-                <option>AM</option>
-                <option>RR</option>
-                <option>AC</option>
-            </select>
-        </div>
-        <br>
-
-        <div class="cadastro">
-            Cidade
-            <input type="text" name="cidade" class="caixa_texto" placeholder="Joinville">
-        </div>
-        <br>
-
-        <div class="cadastro">
-            Bairro
-            <input type="text" name="bairro" class="caixa_texto" placeholder="Piriópolis">
-        </div>
-        <br>
-
-        <div class="cadastro">
-            Rua
-            <input type="text" name="rua" class="caixa_texto" placeholder="Marechal Luz">
-        </div>
-        <br>
-
-        <div class="cadastro">
-            Número
-            <input type="text" name="numero" class="caixa_texto" placeholder="455">
+            <input type="number" name="telefone" class="caixa_texto" placeholder="(47) 99593-9247">
         </div>
         <br>
 
@@ -134,12 +77,14 @@
         </div>
         <br>
 
-        <a href="login.html"><button class="botao_cadastro">Fazer Cadastro</button></a>
+        <a href="login.html"><button onmousemove="validar();" class="botao_cadastro">Fazer Cadastro</button></a>
         <br>
     </form>
 
-    <div id="texto">Já possui cadastro?<a href="login.html">Login</a></div>
+    <div id="texto">Já possui cadastro?<a href="login.html" >Login</a></div>
     
     <br>
 </body>
+
+
 </html>
