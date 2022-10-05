@@ -5,7 +5,7 @@
     $email = $_POST["email"];
     $nome = $_POST["nome"];
     $sobrenome = $_POST["sobrenome"];
-    $senha = $_POST["senha"];
+    $senha = MD5 ($_POST["senha"]);
     $rua = $_POST["rua"];
     $numero = $_POST["numero"];
     $telefone = $_POST["telefone"];
@@ -32,4 +32,7 @@
     $comando->execute();
 
     header("Location:login.html");
+    
+    unset($comando);
+    unset($pdo);
 ?>
