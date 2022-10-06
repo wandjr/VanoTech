@@ -22,8 +22,6 @@
     $comando->bindValue(":codigo", $codigo);
     
     $comando->execute();
-
-    header("Location:login.html");
     
     unset($comando);
     unset($pdo);
