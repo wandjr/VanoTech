@@ -11,7 +11,7 @@
     $cpf = $_POST["cpf"];
     $data_nascimento = $_POST["data_nascimento"];
 
-    $comando = $pdo -> prepare("UPDATE usuario SET email=:email,nome=:nome,senha=:senha,telefone=:telefone,cpf=:cpf,data_nascimento=:data_de_nascimento) WHERE codigo=:codigo");
+    $comando = $pdo -> prepare("UPDATE usuario SET email=:email,nome=:nome,senha=:senha,telefone=:telefone,cpf=:cpf,data_nascimento=:data_de_nascimento) WHERE cod_usuario=:codigo");
     $comando->bindValue(":email", $email);
     $comando->bindValue(":nome", $nome);
     $comando->bindValue(":sobrenome", $sobrenome);
