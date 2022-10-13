@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    // Verifique se o usuário está logado, se não, redirecione-o para uma página de login
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: cadastro.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +39,8 @@
 </head>
 
 <?php
+
+echo '<a href="perfil.hmtl?email=', urlencode($_SESSION['email_usuario']), '">Home</a>';
 
 include("conecta.php");
 
