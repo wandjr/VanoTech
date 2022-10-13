@@ -6,11 +6,7 @@
     $nome = $_POST["nome"];
     $sobrenome = $_POST["sobrenome"];
     $senha = MD5 ($_POST["senha"]);
-<<<<<<< Updated upstream
-=======
-    $rua = $_POST["rua"];
     $numero = $_POST["numero"];
->>>>>>> Stashed changes
     $telefone = $_POST["telefone"];
     $cpf = $_POST["cpf"];
     $data_nascimento = $_POST["data_nascimento"];

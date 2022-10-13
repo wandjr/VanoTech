@@ -40,7 +40,16 @@
 
 <?php
 
-echo '<a href="perfil.hmtl?email=', urlencode($_SESSION['email_usuario']), '">Home</a>';
+echo        '<div class="menu">
+                <img src="imagem/logo.png" id="logo" width="70px" height="70px">
+                <a href="home.php?email='.urlencode($_SESSION['email']). '"><button class="botao">HOME</button></a>
+                <a href="servicos.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SERVIÇOS</button></a>
+                <a href="trabalhe_conosco.php?email='.urlencode($_SESSION['email']). '"><button class="botao">TRABALHE CONOSCO</button></a>
+                <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
+                <a href="contato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CONTATO</button></a>
+                <button class="botao_selecionado">PERFIL</button>
+            </div>';
+
 
 include("conecta.php");
 
@@ -66,16 +75,8 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
 ?>
 
 <body>
-        <div class="menu">
-                <img src="imagem/logo.png" id="logo" width="70px" height="70px">
-                <a href="home.html"><button class="botao">HOME</button></a>
-                <a href="servicos.html"><button class="botao">SERVIÇOS</button></a>
-                <a href="trabalhe_conosco.html"><button class="botao">TRABALHE CONOSCO</button></a>
-                <a href="simulacao_de_Contrato.html"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
-                <a href="contato.html"><button class="botao">CONTATO</button></a>
-                <button class="botao_selecionado">PERFIL</button>
-        </div>
 
+<br><br>
 
     <div class="informacoes_perfil">
         <img src="imagem/perfil.png">

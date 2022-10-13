@@ -10,16 +10,37 @@
     <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
 </head>
 
-<body>
-        <div class="menu">
+<?php
+
+session_start();
+
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+{
+    echo    '<div class="menu">
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
-                <a href="home.html"><button class="botao">HOME</button></a>
+                <a href="home.php?email='.urlencode($_SESSION['email']). '"><button class="botao_selecionado">HOME</button></a>
                 <button class="botao_selecionado">SERVIÇOS</button>
-                <a href="trabalhe_conosco.html"><button class="botao">TRABALHE CONOSCO</button></a>
-                <a href="simulacao_de_Contrato.html"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
-                <a href="contato.html"><button class="botao">CONTATO</button></a>
-                <a href="perfil.html"> <button class="botao">PERFIL</button></a>
-        </div>
+                <a href="trabalhe_conosco.php?email='.urlencode($_SESSION['email']). '"><button class="botao">TRABALHE CONOSCO</button></a>
+                <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
+                <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CONTATO</button></a>
+                <a href="perfil.php?email='.urlencode($_SESSION['email']). '"><button class="botao">PERFIL</button></a>
+            </div>';
+}else{
+    echo    '<div class="menu">
+                <img src="imagem/logo.png" id="logo" width="70px" height="70px">
+                <a href="home.php"><button class="botao">HOME</button></a>
+                <button class="botao_selecionado">SERVIÇOS</button>
+                <a href="trabalhe_conosco.php"><button class="botao">TRABALHE CONOSCO</button></a>
+                <a href="simulacao_de_Contrato.php"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
+                <a href="contato.php"><button class="botao">CONTATO</button></a>
+                <a href="perfil.php"> <button class="botao">PERFIL</button></a>
+            </div>';
+}
+
+
+?>
+
+<body>
 
     <div class="titulo">Serviços</div>
 
@@ -63,7 +84,7 @@
         organização a identificar fraquezas e definir planos de ação para superá-las e levar o negócio a atingir seus
         objetivos estratégicos.</div>
 
-    <a href="cadastro.php">
+    <a href="contratar_servico.php">
         <button class="botao_contrato">
             Contratar Serviço
         </button>

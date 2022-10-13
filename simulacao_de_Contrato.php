@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    // Verifique se o usuário está logado, se não, redirecione-o para uma página de login
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: cadastro.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +17,23 @@
     <link rel="stylesheet" href="vanotech.css" />
     <link href='https://fonts.googleapis.com/css?family=Volkhov' rel='stylesheet'>
 </head>
-<body>
-        <div class="menu">
+
+<?php
+
+session_start();
+
+echo        '<div class="menu">
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
-                <a href="home.html"><button class="botao">HOME</button></a>
-                <a href="servicos.html"><button class="botao">SERVIÇOS</button></a>
-                <a href="trabalhe_conosco.html"><button class="botao">TRABALHE CONOSCO</button></a>
+                <a href="home.php?email='.urlencode($_SESSION['email']). '"><button class="botao">HOME</button></a>
+                <a href="servicos.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SERVIÇOS</button>
+                <a href="trabalhe_conosco.php?email='.urlencode($_SESSION['email']). '"><button class="botao">TRABALHE CONOSCO</button></a>
                 <button class="botao_selecionado">SIMULAÇÃO DE CONTRATO</button>
-                <a href="contato.html"><button class="botao">CONTATO</button></a>
-                <a href="perfil.html"> <button class="botao">PERFIL</button></a>
-        </div>
+                <a href="contato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CONTATO</button></a>
+                <a href="perfil.php?email='.urlencode($_SESSION['email']). '"><button class="botao">PERFIL</button></a>
+            </div>';
+?>
+
+<body>
     <div>Tipo de Serviço</div>
     <select>
         <option disabled selected>- Escolha o Serviço -</option>
