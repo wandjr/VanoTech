@@ -20,7 +20,7 @@
 
 <?php
 
-session_start();
+//session_start();
 
 echo        '<div class="menu">
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">

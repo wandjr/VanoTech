@@ -4,6 +4,9 @@
         $email = $_POST["email"];
         $senha = $_POST["senha"];
        
+        echo(MD5($senha));
+        echo($email);
+
         $comando = $pdo -> prepare("SELECT cod_usuario,senha,email,adm From usuario where email = :email");
 
         $comando -> bindValue(":email",$email);

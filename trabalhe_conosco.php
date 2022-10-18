@@ -20,12 +20,10 @@
 
 <?php
 
-session_start();
-
     echo    '<div class="menu">
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
                 <a href="home.php?email='.urlencode($_SESSION['email']). '"><button class="botao">HOME</button></a>
-                <a href="servicos.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SERVIÇOS</button>
+                <a href="servicos.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SERVIÇOS</button></a>
                 <button class="botao_selecionado">TRABALHE CONOSCO</button>
                 <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
                 <a href="contato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CONTATO</button></a>

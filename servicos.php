@@ -14,11 +14,11 @@
 
 session_start();
 
-if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] = true)
+if(isset($_SESSION["loggedin"]))
 {
     echo    '<div class="menu">
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
-                <a href="home.php?email='.urlencode($_SESSION['email']). '"><button class="botao_selecionado">HOME</button></a>
+                <a href="home.php?email='.urlencode($_SESSION['email']). '"><button class="botao">HOME</button></a>
                 <button class="botao_selecionado">SERVIÇOS</button>
                 <a href="trabalhe_conosco.php?email='.urlencode($_SESSION['email']). '"><button class="botao">TRABALHE CONOSCO</button></a>
                 <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
