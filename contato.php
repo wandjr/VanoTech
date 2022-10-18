@@ -13,7 +13,7 @@
 
 session_start();
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] = true)
 {
     echo    '<div class="menu">
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
