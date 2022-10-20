@@ -149,6 +149,16 @@ body,html
     font-size: 30px;
 }
 
+.paragrafos_asses
+{
+    width: 60%;
+    margin-top: 100px;
+    margin-left: 50px;
+    font-family: "Inter";
+    color: silver;
+    font-size: 30px;
+}
+
 .cadastro
 {
     display: flex;

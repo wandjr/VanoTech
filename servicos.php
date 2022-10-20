@@ -104,12 +104,14 @@ if(isset($_SESSION["loggedin"]))
             <br>
             <img src="imagem/img6.png">
         </div>
-        <p class="paragrafos1">
+        <p class="paragrafos_asses">
             É uma prática empresarial que visa buscar o auxílio de profissionais externos à empresa para que ajudem a
             organização a identificar fraquezas e definir planos de ação para superá-las e levar o negócio a atingir seus
             objetivos estratégicos.
         </p>
     </div>
+
+    <br><br><br><br>    
 
     <a href="contratar_servico.php">
         <button class="botao_contrato">
