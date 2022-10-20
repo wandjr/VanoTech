@@ -59,13 +59,10 @@ body,html
 
 .titulo_recursos
 {
-    margin-top: 100px;
     color: silver;
     font-size: 50px;
-    position: absolute;
     font-family: 'Inter';
     text-align: center;
-    background-color: yellow;
 }
 
 .titulo
@@ -121,11 +118,33 @@ body,html
     height: 540px;
 }
 
-#recursos_humanos
+.servicos
 {
-    position: relative;
-    width: 1500px;
+    width: 100%;
     height: 435px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.titulo_imagem
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.paragrafos1
+{
+    width: 60%;
+    margin-left: 50px;
+    font-family: "Inter";
+    color: silver;
+    font-size: 30px;
 }
 
 .cadastro
