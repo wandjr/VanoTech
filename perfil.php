@@ -16,7 +16,8 @@
     <title>PERFIL</title>
     <link rel="stylesheet" href="vanotech.css"/>
     <link href='https://fonts.googleapis.com/css?family=Volkhov' rel='stylesheet'>
-
+    <script src="vanotech.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
     <style>
 
 .informacoes_perfil
@@ -143,5 +144,7 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
     </thead>
     </table>
 
+    
 </body>
+
 </html>
