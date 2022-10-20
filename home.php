@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="vanotech.css" />
     <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
 </head>
+
+<style>
+#fundo_carrossel
+{
+    width: 100%;
+    height: 600px;
+    background-color: #e1e1e1;
+}
+</style>
+
 <body>
 
 <?php
@@ -40,14 +50,15 @@ if(isset($_SESSION["loggedin"]))
 
 ?>
 
-    <div id="carrossel">
-        <img src="imagem/recursos_humanos.jpg" id="carrossel1" width="100%" height="540px">
-        <img src="imagem/contabilidade.png" id="carrossel2" width="100%" height="540px">
-        <img src="imagem/fiscal.jpg" id="carrossel3" width="100%" height="540px">
-        <img src="imagem/direito_societario.jpg" id="carrossel4" width="100%" height="540px">
-        <img src="imagem/assessoria.jpg" id="carrossel5" width="100%" height="540px">
-    </div>
-    
+    <div id="fundo_carrossel">
+        <div id="carrossel">
+            <img src="imagem/recursos_humanos.jpg" id="carrossel1" width="100%" height="540px">
+            <img src="imagem/contabilidade.png" id="carrossel2" width="100%" height="540px">
+            <img src="imagem/fiscal.jpg" id="carrossel3" width="100%" height="540px">
+            <img src="imagem/direito_societario.jpg" id="carrossel4" width="100%" height="540px">
+            <img src="imagem/assessoria.jpg" id="carrossel5" width="100%" height="540px">
+        </div>
+    </div>  
 
     <div class="titulo">Bem Vindo a VanoTech</div>
 
