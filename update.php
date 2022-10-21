@@ -2,7 +2,6 @@
 
     include("conecta.php");
 
-    $codigo = $_POST["cod_usuario"];
     $email = $_POST["email"];
     $nome = $_POST["nome"];
     $sobrenome = $_POST["sobrenome"];
@@ -11,7 +10,7 @@
     $cpf = $_POST["cpf"];
     $data_nascimento = $_POST["data_nascimento"];
 
-    $comando = $pdo -> prepare("UPDATE usuario SET email=:email,nome=:nome,sobrenome=:sobrenome,senha=:senha,telefone=:telefone,cpf=:cpf,data_nascimento=:data_de_nascimento) WHERE cod_usuario=:codigo");
+    $comando = $pdo -> prepare("UPDATE usuario SET email=:email,nome=:nome,sobrenome=:sobrenome,senha=:senha,telefone=:telefone,cpf=:cpf,data_nascimento=:data_nascimento WHERE cod_usuario=:codigo");
     $comando->bindValue(":email", $email);
     $comando->bindValue(":nome", $nome);
     $comando->bindValue(":sobrenome", $sobrenome);
@@ -21,9 +20,6 @@
     $comando->bindValue(":data_nascimento", $data_nascimento);
     session_start();
     $comando->bindValue(":codigo", $_SESSION["cod_usuario"]);
-    
-    print_r($comando);
-    die();
 
     $comando->execute();
     

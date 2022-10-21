@@ -70,7 +70,6 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             $telefone=$resultado['telefone'];
             $cpf=$resultado['cpf'];
             $data_nascimento=$resultado['data_nascimento'];
-            $codigo=$resultado['cod_usuario'];
         }
 
 ?>
@@ -83,31 +82,31 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
         <img src="imagem/perfil.png">
         <br>
 
-        <form id="formulario" action="" method="POST">
-            <input type="text" class="caixa_info" value="<?php echo($nome) ?>">
+        <form id="formulario" action="update.php" method="POST">
+            <input type="text" class="caixa_info" value="<?php echo($nome) ?>" name="nome">
 
             <div>Sobrenome</div>
-            <input type="text" class="caixa_info" value="<?php echo($sobrenome) ?>">
+            <input type="text" class="caixa_info" value="<?php echo($sobrenome) ?>" name="sobrenome">
             
             <div>E-mail</div>
-            <input type="email" class="caixa_info" value="<?php echo($email) ?>">
+            <input type="email" class="caixa_info" value="<?php echo($email) ?>" name="email">
+
+            <div>Senha</div>
+            <input type="text" class="caixa_info" value="" name="senha">
 
             <div>Telefone</div>
-            <input type="text" class="caixa_info" value="<?php echo($telefone) ?>">
+            <input type="text" class="caixa_info" value="<?php echo($telefone) ?>" name="telefone">
 
             <div>CPF</div>
-            <input type="text" class="caixa_info" value="<?php echo($cpf) ?>">
-
-            <input type="hidden" name="codigo" value="<?php echo($nome) ?>">
+            <input type="text" class="caixa_info" value="<?php echo($cpf) ?>" name="cpf">
 
             <div>Data de Nascimento</div>
-            <input type="date" class="caixa_info" value="<?php echo($data_nascimento) ?>">
+            <input type="date" class="caixa_info" value="<?php echo($data_nascimento) ?>" name="data_nascimento">
+
+            <button>Criar Novo Perfil</button>
+            <input type="submit" value="Salvar Informações">
+            <button>Deletar Perfil</button>
         </form>
-
-
-        <button>Criar Novo Perfil</button>
-        <button onclick="Alterar();">Salvar Informações</button>
-        <button>Deletar Perfil</button>
     </div>
 
     <div>Simulações de Contrato</div>
