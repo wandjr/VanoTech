@@ -16,8 +16,8 @@
     <title>PERFIL</title>
     <link rel="stylesheet" href="vanotech.css"/>
     <link href='https://fonts.googleapis.com/css?family=Volkhov' rel='stylesheet'>
-    <script src="vanotech.js"></script>
     <script src="jquery-3.6.0.min.js"></script>
+    <script src="vanotech.js"></script>
     <style>
 
 .informacoes_perfil
@@ -35,6 +35,18 @@
     text-align: center;
 }
 
+#meu_upload
+{
+    display: none;
+}
+
+#outputImage
+{
+    
+    width: 150px;
+    height: 150px;
+    border-radius: 200px;
+}
     </style>
 
 </head>
@@ -71,18 +83,24 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             $cpf=$resultado['cpf'];
             $data_nascimento=$resultado['data_nascimento'];
         }
-
 ?>
 
 <body>
 
 <br><br>
 
+<form id="formulario" action="update.php" method="POST" enctype="multipart/form-data" >
+
     <div class="informacoes_perfil">
-        <img src="imagem/perfil.png">
+
+        <div id="foto" onclick="Trocar_imagem();">
+            <canvas id="outputImage" width="176px" height="174px"></canvas>
+        </div>
+
+        <input type="file" id="meu_upload" name="foto_perfil">
         <br>
 
-        <form id="formulario" action="update.php" method="POST">
+        
             <input type="text" class="caixa_info" value="<?php echo($nome) ?>" name="nome">
 
             <div>Sobrenome</div>
@@ -143,7 +161,87 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
     </thead>
     </table>
 
-    
 </body>
+<script>
+function Trocar_imagem()
+{
+    meu_upload.click();
+}
 
+$(document).on("change", "#meu_upload", function(e) {
+    showThumbnail(this.files);
+});
+
+const inputImage = new Image();
+
+function showThumbnail(files) {
+    if (files && files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) 
+        {
+            //foto.style.backgroundImage = 'url(' +e.target.result+ ')';
+            
+            inputImage.src = e.target.result;
+
+            crop(inputImage.src, 1/2)
+        }
+        
+        reader.readAsDataURL(files[0]);
+    }
+}
+
+var outputImageAspectRatio = 1;
+
+function crop(url, aspectRatio) 
+{
+    
+// we return a Promise that gets resolved with our canvas element
+return new Promise(resolve => 
+{
+    inputImage.onload = () => 
+    {
+
+        var outputImage = document.getElementById('outputImage');
+
+        // set it to the same size as the image
+        outputImage.width = inputImage.naturalWidth;
+        outputImage.height = inputImage.naturalHeight;
+
+        var inputWidth = inputImage.naturalWidth;
+        var inputHeight = inputImage.naturalHeight;
+
+        var inputImageAspectRatio = inputWidth / inputHeight;
+    
+        // if it's bigger than our target aspect ratio
+        let outputWidth = inputWidth;
+        let outputHeight = inputHeight;
+
+        if (inputImageAspectRatio > outputImageAspectRatio) 
+        {
+            outputWidth = inputHeight * outputImageAspectRatio;
+        } 
+        else if (inputImageAspectRatio < outputImageAspectRatio) 
+        {
+            outputHeight = inputHeight / outputImageAspectRatio;
+        }
+
+        var outputX = (outputWidth - inputWidth) * .5;
+        var outputY = (outputHeight - inputHeight) * .5;
+
+        // set it to the same size as the image
+        outputImage.width = outputWidth;
+        outputImage.height = outputHeight;
+
+        // draw our image at position 0, 0 on the canvas
+
+        var ctx = outputImage.getContext('2d');
+        ctx.drawImage(inputImage, outputX, outputY);  
+    };
+})
+}
+
+inputImage.src = "imagem/perfil.png";
+crop(inputImage.src, 1/2)
+</script>
 </html>

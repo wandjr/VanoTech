@@ -7,6 +7,8 @@
     <title>HOME</title>
     <link rel="stylesheet" href="vanotech.css" />
     <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="vanotech.js"></script>
 </head>
 
 <style>
@@ -72,8 +74,5 @@ if(isset($_SESSION["loggedin"]))
 
 <br><br><br><br>    
 </body>
-
-<script src="jquery-3.6.0.min.js"></script>
-<script src="vanotech.js"></script>
 
 </html>

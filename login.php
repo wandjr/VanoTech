@@ -3,10 +3,6 @@
 
         $email = $_POST["email"];
         $senha = $_POST["senha"];
-       
-        echo(MD5($senha));
-        echo($email);
-
         $comando = $pdo -> prepare("SELECT cod_usuario,senha,email,adm From usuario where email = :email");
 
         $comando -> bindValue(":email",$email);
@@ -15,7 +11,7 @@
 
         if($comando->rowCount()== 1){
             $resultado = $comando->fetch();
-            if ($resultado['senha']== MD5($senha)){
+            if ($resultado["senha"]== MD5($senha)){
                     
                 session_start();
 

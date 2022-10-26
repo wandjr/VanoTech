@@ -6,7 +6,7 @@ function showSlides() {
   var slides;
 
   for (i = 1; i < 6; i++) {
-    $("#carrossel"+i).hide()
+    $("#carrossel"+i).hide();
   }
   slideIndex++;
   if (slideIndex > 5) {slideIndex = 1}    
@@ -30,3 +30,4 @@ function Alterar()
 
   formulario.submit();
 }
+
