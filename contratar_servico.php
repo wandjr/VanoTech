@@ -81,9 +81,12 @@ border-radius: 90px;
 
     <div class="Tipo">Tipo de serviço</div>
 
-    <div class="Escolha"></div>
+    <button class="Escolha">- Escolha o Serviço -</button>
 
     <div class="tempo">Tempo do contrato</div>
+
+    <button class="Escolhatempo">- Escolha o Tempo de Contrato -</button>
+
 
 
         
