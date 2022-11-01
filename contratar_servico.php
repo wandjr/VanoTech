@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="vanotech.css" />
     <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
 </head>
+
+<style>
+
+.Tipo
+{
+    position: absolute;
+width: 238px;
+height: 39px;
+left: 699px;
+top: 342px;
+}
+
+
+</style>
+
 <body>
     <div class="menu">
             <img src="imagem/logo.png" id="logo" width="70px" height="70px">
@@ -19,7 +34,7 @@
             <a href="perfil.php"> <button class="botao">PERFIL</button></a>
     </div>
 
-    <div class="TipoServico">Tipo de serviço</div>
+    <div class="Tipo">Tipo de serviço</div>
         
 
 </body>
