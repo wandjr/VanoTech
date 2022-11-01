@@ -17,14 +17,26 @@
 width: 238px;
 height: 39px;
 left: 699px;
-top: 342px;
+top: 300px;
 
 font-family: 'Inter';
 font-style: normal;
-font-weight: 300;
-font-size: 32px;
+font-weight: 400;
+font-size: 20px;
 line-height: 39px;
 color: white;
+}
+
+.Escolha
+{
+    position: absolute;
+width: 763px;
+height: 51px;
+left: 436px;
+top: 423px;
+
+background: #FFFFFF;
+border-radius: 90px;
 }
 
 
@@ -42,6 +54,9 @@ color: white;
     </div>
 
     <div class="Tipo">Tipo de serviço</div>
+
+    <div class="Escolha"></div>
+
         
 
 </body>
