@@ -30,4 +30,3 @@ function Alterar()
 
   formulario.submit();
 }
-

@@ -82,17 +82,17 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             $telefone=$resultado['telefone'];
             $cpf=$resultado['cpf'];
             $data_nascimento=$resultado['data_nascimento'];
+            $imagem=$resultado['foto'];
+        }else{
+            $imagem="imagem/pessoa.png";
         }
 ?>
 
 <body>
 
 <br><br>
-
-<form id="formulario" action="update.php" method="POST" enctype="multipart/form-data" >
-
+    <form id="formulario" action="" method="POST" enctype="multipart/form-data" >
     <div class="informacoes_perfil">
-
         <div id="foto" onclick="Trocar_imagem();">
             <canvas id="outputImage" width="176px" height="174px"></canvas>
         </div>
@@ -121,9 +121,9 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             <div>Data de Nascimento</div>
             <input type="date" class="caixa_info" value="<?php echo($data_nascimento) ?>" name="data_nascimento">
 
-            <button>Criar Novo Perfil</button>
-            <input type="submit" value="Salvar Informações">
-            <button>Deletar Perfil</button>
+            <button onclick="Meu_click(1);">Salvar Informações</button>
+            <button onclick="Meu_click(2);">Deletar Perfil</button>
+            <button onclick="Abrir_cadastro();">Criar Novo Perfil</button>
         </form>
     </div>
 
@@ -160,9 +160,22 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
         </tr>
     </thead>
     </table>
-
+    <?php echo($imagem) ?>
 </body>
 <script>
+
+function Meu_click(meu_botao)
+{
+  formulario.action="update.php?botao="+meu_botao;
+
+  formulario.submit();
+}
+
+function Abrir_cadastro()
+{
+  window.open("cadastro.php", "_self");
+}
+
 function Trocar_imagem()
 {
     meu_upload.click();
@@ -241,7 +254,7 @@ return new Promise(resolve =>
 })
 }
 
-inputImage.src = "imagem/perfil.png";
+inputImage.src = "<?php echo($imagem) ?>";
 crop(inputImage.src, 1/2)
 </script>
 </html>
