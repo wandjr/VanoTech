@@ -14,57 +14,53 @@
 .Tipo
 {
     position: absolute;
-width: 238px;
-height: 39px;
-left: 699px;
-top: 130px;
+    width: 238px;
+    height: 39px;
+    left: 699px;
+    top: 130px;
+    
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 39px;
-color:white;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    color:white;
 }
 
 .Escolha
 {
     position: absolute;
-width: 763px;
-height: 51px;
-left: 436px;
-top: 220px;
+    width: 763px;
+    height: 51px;
+    left: 436px;
+    top: 220px;
 
-background: #FFFFFF;
-border-radius: 90px;
+    border-radius: 90px;
 }
 
 .tempo
 {
     position: absolute;
-width: 294px;
-height: 39px;
-left: 671px;
-top: 310px;
+    width: 294px;
+    height: 39px;
+    left: 671px;
+    top: 310px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 39px;
-color:white;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    color:white;
 }
 
 .Escolhatempo
 {
-position: absolute;
-width: 763px;
-height: 54px;
-left: 438px;
-top: 420px;
+    position: absolute;
+    width: 763px;
+    height: 54px;
+    left: 438px;
+    top: 420px;
 
-background: white;
-border-radius: 90px;
+    background: white;
+    border-radius: 90px;
 }
 
 .box
