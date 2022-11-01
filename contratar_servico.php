@@ -77,6 +77,16 @@ border-radius: 90px;
     top: 718px;
     border-radius: 90px;
 }
+
+.resultado
+{
+    position: absolute;
+    width: 949px;
+    height: 151px;
+    left: 343px;
+    top: 904px;
+    background: #FFFFFF;
+}
 </style>
 
 <body>
@@ -99,6 +109,11 @@ border-radius: 90px;
     <button class="Escolhatempo">- Escolha o Tempo de Contrato -</button>
 
     <button class="box"> Contratar Serviço </button>
+
+    <div class="resultado"></div>
+
+    
+
 
     
 
