@@ -17,14 +17,14 @@
 width: 238px;
 height: 39px;
 left: 699px;
-top: 300px;
+top: 342px;
 
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
-font-size: 20px;
+font-size: 32px;
 line-height: 39px;
-color: white;
+color:white;
 }
 
 .Escolha
@@ -39,7 +39,33 @@ background: #FFFFFF;
 border-radius: 90px;
 }
 
+.tempo
+{
+position: absolute;
+width: 294px;
+height: 39px;
+left: 671px;
+top: 200px;
 
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+color:white;
+}
+
+.Escolhatempo
+{
+position: absolute;
+width: 763px;
+height: 54px;
+left: 436px;
+top: 587px;
+
+background: white;
+border-radius: 90px;
+}
 </style>
 
 <body>
@@ -56,6 +82,9 @@ border-radius: 90px;
     <div class="Tipo">Tipo de serviço</div>
 
     <div class="Escolha"></div>
+
+    <div class="tempo">Tempo do contrato</div>
+
 
         
 
