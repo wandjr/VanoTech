@@ -66,6 +66,19 @@ top: 587px;
 background: white;
 border-radius: 90px;
 }
+
+.box
+{
+    box-sizing: border-box;
+    position: absolute;
+    width: 594px;
+    height: 109px;
+    left: 521px;
+    top: 718px;
+    background: #FFFFFF;
+    border: 6px solid #5F9F9F;
+    border-radius: 90px;
+}
 </style>
 
 <body>
