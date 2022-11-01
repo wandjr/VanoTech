@@ -17,7 +17,7 @@
 width: 238px;
 height: 39px;
 left: 699px;
-top: 342px;
+top: 130px;
 
 font-family: 'Inter';
 font-style: normal;
@@ -33,7 +33,7 @@ color:white;
 width: 763px;
 height: 51px;
 left: 436px;
-top: 423px;
+top: 220px;
 
 background: #FFFFFF;
 border-radius: 90px;
@@ -45,7 +45,7 @@ border-radius: 90px;
 width: 294px;
 height: 39px;
 left: 671px;
-top: 516px;
+top: 310px;
 
 font-family: 'Inter';
 font-style: normal;
@@ -60,8 +60,8 @@ color:white;
 position: absolute;
 width: 763px;
 height: 54px;
-left: 436px;
-top: 587px;
+left: 438px;
+top: 420px;
 
 background: white;
 border-radius: 90px;
@@ -74,7 +74,7 @@ border-radius: 90px;
     width: 594px;
     height: 109px;
     left: 521px;
-    top: 718px;
+    top: 530px;
     border-radius: 90px;
 }
 
@@ -84,7 +84,7 @@ border-radius: 90px;
     width: 949px;
     height: 151px;
     left: 343px;
-    top: 904px;
+    top: 710px;
     background: #FFFFFF;
 }
 </style>
