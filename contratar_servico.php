@@ -21,9 +21,10 @@ top: 342px;
 
 font-family: 'Inter';
 font-style: normal;
-font-weight: 400;
+font-weight: 300;
 font-size: 32px;
 line-height: 39px;
+color: white;
 }
 
 
