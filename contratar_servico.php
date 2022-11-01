@@ -18,6 +18,12 @@ width: 238px;
 height: 39px;
 left: 699px;
 top: 342px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
 }
 
 
