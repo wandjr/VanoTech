@@ -41,11 +41,11 @@ border-radius: 90px;
 
 .tempo
 {
-position: absolute;
+    position: absolute;
 width: 294px;
 height: 39px;
 left: 671px;
-top: 200px;
+top: 516px;
 
 font-family: 'Inter';
 font-style: normal;
