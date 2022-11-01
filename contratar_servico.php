@@ -19,6 +19,9 @@
             <a href="perfil.php"> <button class="botao">PERFIL</button></a>
     </div>
 
+    <div class="TipoServico">Tipo de serviço</div>
+        
+
 </body>
 
 
