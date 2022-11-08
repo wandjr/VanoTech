@@ -9,6 +9,20 @@
     <link href='https://fonts.googleapis.com/css?family=Volkhov' rel='stylesheet'>
 </head>
 
+<style>
+
+.localizacao
+{
+    position: absolute;
+width: 751px;
+height: 468px;
+left: 865px;
+top: 416px;
+
+}
+
+</style>
+
 <?php
 
 session_start();
@@ -55,9 +69,8 @@ if(isset($_SESSION["loggedin"]))
         <img src="imagem/whatsapp.png">
     </a>
 
-    <div>Nossa Localização</div>
+    <div class="localizacao"> </div>
     <a href="https://www.google.com.br/maps/@-23.0720325,-52.4481016,20z?hl=pt-BR"><img src="imagem/localizacao.png"></a>
-    <div>Rua: Pedro Jorge - Bairro: Souza - Numero: 456</div>
-    <div>Cep: 89457-028</div>
+s
 </body>
 </html>
