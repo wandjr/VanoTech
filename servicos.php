@@ -113,7 +113,7 @@ if(isset($_SESSION["loggedin"]))
 
     <br><br><br><br>    
 
-    <a href="contratar_servico.php">
+    <a href="contratar_servico.php?email=<?php echo urlencode($_SESSION['email']) ?>">
         <button class="botao_contrato">
             Contratar Serviço
         </button>

@@ -4,7 +4,7 @@
     $codigo = $_GET['codigo'];
     
     //comando sql.
-    $comando = $pdo->("DELETE FROM usuario WHERE cod_usuario = :usuario");
+    $comando = $pdo->("DELETE FROM usuario WHERE cod_usuario = :codigo");
 
     //insere valores das variaveis no comando sql.
     $comando->bindValue(':codigo',$codigo);

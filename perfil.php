@@ -166,14 +166,19 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
 
 function Meu_click(meu_botao)
 {
-  formulario.action="update.php?botao="+meu_botao;
+    if(meu_botao==1){
+        formulario.action="update.php?botao="+meu_botao;
+    }
+    if(meu_botao==2){
+        formulario.action="deletar.php?botao="+meu_botao;
+    }
 
   formulario.submit();
 }
 
 function Abrir_cadastro()
 {
-  window.open("cadastro.php", "_self");
+  window.open("cadastro.php?", "_blank");
 }
 
 function Trocar_imagem()

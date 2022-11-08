@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    // Verifique se o usuário está logado, se não, redirecione-o para uma página de login
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: cadastro.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,99 +22,101 @@
 
 .Tipo
 {
-    position: absolute;
-    width: 238px;
-    height: 39px;
-    left: 699px;
-    top: 130px;
-    
-
+    text-align: center;
     font-family: 'Inter';
     font-weight: 400;
     font-size: 32px;
-    color:white;
+    color: white;
 }
 
 .Escolha
 {
-    position: absolute;
-    width: 763px;
-    height: 51px;
-    left: 436px;
-    top: 220px;
+    text-align: center;
+    width: 600px;
+    height: 100px;
 
+    font-family: 'Inter';
     border-radius: 90px;
+    font-size: 20px;
+    border-width: 5px;
+    border-color: #5F9F9F;
 }
 
 .tempo
 {
-    position: absolute;
-    width: 294px;
-    height: 39px;
-    left: 671px;
-    top: 310px;
-
+    text-align: center;
     font-family: 'Inter';
     font-weight: 400;
     font-size: 32px;
     color:white;
 }
 
-.Escolhatempo
-{
-    position: absolute;
-    width: 763px;
-    height: 54px;
-    left: 438px;
-    top: 420px;
-
-    background: white;
-    border-radius: 90px;
-}
-
 .box
 {
+    text-align: center;
     box-sizing: border-box;
-    position: absolute;
     width: 594px;
     height: 109px;
-    left: 521px;
-    top: 530px;
     border-radius: 90px;
 }
 
 .resultado
 {
-    position: absolute;
+    text-align: center;
     width: 949px;
     height: 151px;
-    left: 343px;
-    top: 710px;
     background: #FFFFFF;
 }
 </style>
 
-<body>
-    <div class="menu">
-            <img src="imagem/logo.png" id="logo" width="70px" height="70px">
-            <a href="home.php"><button class="botao">HOME</button></a>
-            <a href="servicos.php"><button class="botao">SERVIÇOS</button></a>
-            <a href="trabalhe_conosco.php"><button class="botao">TRABALHE CONOSCO</button></a>
-            <a href="simulacao_de_Contrato.php"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
-            <a href="contato.php"><button class="botao">CONTATO</button></a>
-            <a href="perfil.php"> <button class="botao">PERFIL</button></a>
-    </div>
+<?php
 
+echo        '<div class="menu">
+                <img src="imagem/logo.png" id="logo" width="70px" height="70px">
+                <a href="home.php?email='.urlencode($_SESSION['email']). '"><button class="botao">HOME</button></a>
+                <a href="servicos.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SERVIÇOS</button></a>
+                <a href="trabalhe_conosco.php?email='.urlencode($_SESSION['email']). '"><button class="botao">TRABALHE CONOSCO</button></a>
+                <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
+                <a href="contato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CONTATO</button></a>
+                <a href="perfil.php?email='.urlencode($_SESSION['email']). '"><button class="botao">PERFIL</button></a>
+            </div>';
+?>
+
+<body>
+
+<form action="inserir_servico.php" method="POST">
+
+<br><br>
     <div class="Tipo">Tipo de serviço</div>
 
-    <button class="Escolha">- Escolha o Serviço -</button>
+    <br><br>
+    <select class="Escolha">
+        <option selected disabled>- Escolha o Serviço -</option>
+        <option>Recursos Humanos</option>
+        <option>Contabilidade</option>
+        <option>Fiscal (Tax)</option>
+        <option>Direito Societário</option>
+        <option>Assessoria e Consultoria Empresarial</option>
+    </select>
 
+    <br><br>
     <div class="tempo">Tempo do contrato</div>
 
-    <button class="Escolhatempo">- Escolha o Tempo de Contrato -</button>
+    <br><br>
+    <select class="Escolha">
+        <option selected disabled>- Escolha o Tempo de Contrato -</option>
+        <option>1 dia</option>
+        <option>1 mês</option>
+        <option>6 meses</option>
+        <option>1 ano</option>
+        <option>2 anos</option>
+    </select>
 
-    <button class="box"> Contratar Serviço </button>
+    <br><br>
+    <input type="submit" value="Contratar Serviço" class="box">
+    </form>
 
+    <br><br>
     <div class="resultado"></div>
 
     
