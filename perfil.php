@@ -67,6 +67,7 @@ echo        '<div class="menu">
 include("conecta.php");
 
 $email=$_GET["email"];
+$ImgDecode="imagem/pessoa.png";
 
 $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
 
@@ -82,9 +83,14 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             $telefone=$resultado['telefone'];
             $cpf=$resultado['cpf'];
             $data_nascimento=$resultado['data_nascimento'];
-            $imagem=$resultado['foto'];
-        }else{
-            $imagem="imagem/pessoa.png";
+            $cod_usuario=$resultado['cod_usuario'];
+            $ImgRaw=$resultado['foto'];
+
+           
+            $ImgRaw         = str_replace("base64,", "", $ImgRaw);
+
+            $ImgDecode      = base64_decode($ImgRaw);
+            
         }
 ?>
 
@@ -130,37 +136,71 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
     <div>Simulações de Contrato</div>
 
     <table border="2">
-        <thead>
-        <tr>
-            <td>Código do Contrato</td>
-            <td>Contratante</td>
-            <td>Serviço</td>
-            <td>Tempo de Contrato</td>
-            <td>Local de Encontro</td>
-            <td>Profissional</td>
-            <td>Preço Total</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Paulo Roberto</td>
-            <td>Fiscal</td>
-            <td>2 anos</td>
-            <td>MN Contabilidade</td>
-            <td>Ruan Souza</td>
-            <td>15000R$</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </thead>
+    <tr>
+        <td>Código</td>
+        <td>Local</td>
+        <td>Data</td>
+        <td>Horário</td>
+        <td>Preço</td>
+        <td>Funcionário</td>
+        <td>Serviço</td>
+        <td>Duração</td>
+    </tr>
+        <?php 
+        $comando = $pdo -> prepare("SELECT * From contrato where cod_usuario = :cod_usuario");
+
+        $comando -> bindValue(":cod_usuario",$cod_usuario);
+
+        $comando -> execute();
+        
+        $resultado = $comando->fetchAll();
+        foreach($resultado as $linha)
+        {
+            $cod_contrato=$linha["cod_contrato"];
+            $local_servico=$linha["local_servico"];
+            $data_servico=$linha["data_servico"];
+            $horario_servico=$linha["horario_servico"];
+            $preco=$linha["preco"];
+            $funcionario=$linha["funcionario"];
+            $tipo_servico=$linha["tipo_servico"];
+            $duracao_contrato=$linha["duracao_contrato"];
+
+            if($duracao_contrato==1)
+            {
+                $duracao_contrato="1 dia";
+            }
+            if($duracao_contrato==30)
+            {
+                $duracao_contrato="1 mês";
+            }
+            if($duracao_contrato==180)
+            {
+                $duracao_contrato="6 meses";
+            }
+            if($duracao_contrato==365)
+            {
+                $duracao_contrato="1 ano";
+            }
+            if($duracao_contrato==730)
+            {
+                $duracao_contrato="2 anos";
+            }
+
+            echo("<tr>
+            <td>$cod_contrato</td>
+            <td>$local_servico</td>
+            <td>$data_servico</td>
+            <td>$horario_servico</td>
+            <td>$preco</td>
+            <td>$funcionario</td>
+            <td>$tipo_servico</td>
+            <td>$duracao_contrato</td>
+            </tr>");
+        }
+        ?>
+    
     </table>
-    <?php echo($imagem) ?>
+    
 </body>
 <script>
 
@@ -259,7 +299,7 @@ return new Promise(resolve =>
 })
 }
 
-inputImage.src = "<?php echo($imagem) ?>";
+inputImage.src = "<?php echo($ImgDecode);?>";
 crop(inputImage.src, 1/2)
 </script>
 </html>

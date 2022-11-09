@@ -84,13 +84,13 @@ echo        '<div class="menu">
 
 <body>
 
-<form action="inserir_servico.php" method="POST">
+<form action="inserir_contrato.php" method="POST">
 
 <br><br>
     <div class="Tipo">Tipo de serviço</div>
 
     <br><br>
-    <select class="Escolha">
+    <select class="Escolha" name="tipo_servico">
         <option selected disabled>- Escolha o Serviço -</option>
         <option>Recursos Humanos</option>
         <option>Contabilidade</option>
@@ -103,13 +103,13 @@ echo        '<div class="menu">
     <div class="tempo">Tempo do contrato</div>
 
     <br><br>
-    <select class="Escolha">
+    <select class="Escolha" name="duracao_contrato">
         <option selected disabled>- Escolha o Tempo de Contrato -</option>
-        <option>1 dia</option>
-        <option>1 mês</option>
-        <option>6 meses</option>
-        <option>1 ano</option>
-        <option>2 anos</option>
+        <option value="1">1 dia</option>
+        <option value="30">1 mês</option>
+        <option value="180">6 meses</option>
+        <option value="365">1 ano</option>
+        <option value="730">2 anos</option>
     </select>
 
     <br><br>
