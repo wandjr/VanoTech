@@ -17,7 +17,7 @@
 width: 551px;
 height: 468px;
 left: 665px;
-top: 416px;
+top: 250px;
 }
 
 .whatsapp
@@ -27,9 +27,25 @@ width: 229px;
 height: 229px;
 left: 248px;
 top: 517px;
-
 }
 
+.nossa
+{
+    position: absolute;
+    font-size:30px;
+height: 48px;
+left: 925px;
+top: 200px;
+color: white;
+}
+
+.informacoes
+{
+    position: absolute;
+font-size:30px;
+height: 48px;
+left: 200px;
+top: 80px;
 }
 
 </style>
@@ -65,6 +81,10 @@ if(isset($_SESSION["loggedin"]))
 ?>
 
 <body>  
+
+<div class="nossa">Nossa Localização</div>
+<div class="informacoes">Informações para contato:</div>
+
 
 <div class="whatsapp">
     <a href="https://www.whatsapp.com/?lang=pt_br">
