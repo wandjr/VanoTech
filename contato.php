@@ -54,7 +54,7 @@ color: white;
     position: absolute;
 font-size:25px;
 height: 48px;
-left: 224px;
+left: 235px;
 top: 257px;
 color: white;
 
@@ -96,7 +96,7 @@ if(isset($_SESSION["loggedin"]))
 
 <div class="nossa">Nossa Localização</div>
 <div class="informacoes">Informações para contato:</div>
-<div class="info">Telefone: (47) 99678-4356</div>
+<div class="info">Telefone: (47) 3436-4356 <br><br>Whatsapp: (47) 99678-8798 <br><br> Email: vanotech@gmail.com</div>
 
 
 <div class="whatsapp">
