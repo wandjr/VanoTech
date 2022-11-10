@@ -60,6 +60,15 @@ color: white;
 
 }
 
+.rua
+{
+    position: absolute;
+font-size: 25px;
+left: 710px;
+top:695px;
+color: white
+}
+
 </style>
 
 <?php
@@ -97,6 +106,7 @@ if(isset($_SESSION["loggedin"]))
 <div class="nossa">Nossa Localização</div>
 <div class="informacoes">Informações para contato:</div>
 <div class="info">Telefone: (47) 3436-4356 <br><br>Whatsapp: (47) 99678-8798 <br><br> Email: vanotech@gmail.com</div>
+<div class="rua">Rua: Pedro Jorge - Bairro:Souza - Numero:456 - CEP:89229-240</div>
 
 
 <div class="whatsapp">
