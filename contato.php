@@ -45,7 +45,7 @@ color: white;
 font-size:30px;
 height: 48px;
 left: 216px;
-top: 155px;
+top: 157px;
 }
 
 </style>
