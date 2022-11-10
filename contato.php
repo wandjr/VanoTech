@@ -44,8 +44,20 @@ color: white;
     position: absolute;
 font-size:30px;
 height: 48px;
-left: 216px;
+left: 224px;
 top: 157px;
+color: white;
+}
+
+.info
+{
+    position: absolute;
+font-size:25px;
+height: 48px;
+left: 224px;
+top: 257px;
+color: white;
+
 }
 
 </style>
@@ -84,6 +96,7 @@ if(isset($_SESSION["loggedin"]))
 
 <div class="nossa">Nossa Localização</div>
 <div class="informacoes">Informações para contato:</div>
+<div class="info">Telefone: (47) 99678-4356</div>
 
 
 <div class="whatsapp">
