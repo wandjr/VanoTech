@@ -16,7 +16,7 @@
     position: absolute;
 width: 751px;
 height: 468px;
-left: 865px;
+left: 665px;
 top: 416px;
 
 }
@@ -56,13 +56,12 @@ if(isset($_SESSION["loggedin"]))
 <body>  
 
 
-    <div>vanotech@gmail.com</div>
     <a href="https://www.whatsapp.com/?lang=pt_br">
         <img src="imagem/whatsapp.png">
     </a>
 
-    <div class="localizacao"> </div>
+    <div class="localizacao"> 
     <a href="https://www.google.com.br/maps/@-23.0720325,-52.4481016,20z?hl=pt-BR"><img src="imagem/localizacao.png"></a>
-
+    </div>
 </body>
 </html>
