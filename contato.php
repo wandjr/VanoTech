@@ -55,15 +55,7 @@ if(isset($_SESSION["loggedin"]))
 
 <body>  
 
-    <div>Informações para Contato</div>
 
-    <div>Telefone</div>
-    <div>(47) 998827777</div>
-
-    <div>WhatsApp</div>
-    <div>(47) 90904442</div>
-
-    <div>E-mail</div>
     <div>vanotech@gmail.com</div>
     <a href="https://www.whatsapp.com/?lang=pt_br">
         <img src="imagem/whatsapp.png">
@@ -71,6 +63,6 @@ if(isset($_SESSION["loggedin"]))
 
     <div class="localizacao"> </div>
     <a href="https://www.google.com.br/maps/@-23.0720325,-52.4481016,20z?hl=pt-BR"><img src="imagem/localizacao.png"></a>
-s
+
 </body>
 </html>
