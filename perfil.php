@@ -100,7 +100,8 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
     <form id="formulario" action="" method="POST" enctype="multipart/form-data" >
     <div class="informacoes_perfil">
         <div id="foto" onclick="Trocar_imagem();">
-            <canvas id="outputImage" width="176px" height="174px"></canvas>
+            <canvas id="outputImage" width="176px" height="174px">
+            </canvas>
         </div>
 
         <input type="file" id="meu_upload" name="foto_perfil">
@@ -129,11 +130,13 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
 
             <button onclick="Meu_click(1);">Salvar Informações</button>
             <button onclick="Meu_click(2);">Deletar Perfil</button>
-            <button onclick="Abrir_cadastro();">Criar Novo Perfil</button>
+
+           
         </form>
     </div>
+    <a href="cadastro.php"> <button>Criar Novo Perfil</button></a>
 
-    <div>Simulações de Contrato</div>
+    <div>Contrato</div>
 
     <table border="2">
     <tr>
@@ -145,6 +148,7 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
         <td>Funcionário</td>
         <td>Serviço</td>
         <td>Duração</td>
+        <td></td>
     </tr>
         <?php 
         $comando = $pdo -> prepare("SELECT * From contrato where cod_usuario = :cod_usuario");
@@ -195,6 +199,7 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             <td>$funcionario</td>
             <td>$tipo_servico</td>
             <td>$duracao_contrato</td>
+            <td><a href='editar_contrato.php?cod_contrato=$cod_contrato'><img src='imagem/editar.png' width='20px'></a></td>
             </tr>");
         }
         ?>
@@ -218,7 +223,7 @@ function Meu_click(meu_botao)
 
 function Abrir_cadastro()
 {
-  window.open("cadastro.php?", "_blank");
+  window.open("cadastro.php", "_self");
 }
 
 function Trocar_imagem()
@@ -299,7 +304,7 @@ return new Promise(resolve =>
 })
 }
 
-inputImage.src = "<?php echo($ImgDecode);?>";
+    inputImage.src = "<?php echo('../imagem/teste.jpg');?>";
 crop(inputImage.src, 1/2)
 </script>
 </html>
