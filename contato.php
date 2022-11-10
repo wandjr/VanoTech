@@ -17,7 +17,7 @@
 width: 551px;
 height: 468px;
 left: 665px;
-top: 250px;
+top: 210px;
 }
 
 .whatsapp
@@ -26,7 +26,7 @@ top: 250px;
 width: 229px;
 height: 229px;
 left: 248px;
-top: 517px;
+top: 460px;
 }
 
 .nossa
@@ -35,7 +35,7 @@ top: 517px;
     font-size:30px;
 height: 48px;
 left: 925px;
-top: 200px;
+top: 160px;
 color: white;
 }
 
@@ -45,7 +45,7 @@ color: white;
 font-size:30px;
 height: 48px;
 left: 224px;
-top: 157px;
+top: 160px;
 color: white;
 }
 
@@ -55,7 +55,7 @@ color: white;
 font-size:25px;
 height: 48px;
 left: 235px;
-top: 257px;
+top: 253px;
 color: white;
 
 }
