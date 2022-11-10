@@ -14,10 +14,21 @@
 .localizacao
 {
     position: absolute;
-width: 751px;
+width: 551px;
 height: 468px;
 left: 665px;
 top: 416px;
+}
+
+.whatsapp
+{
+    position: absolute;
+width: 229px;
+height: 229px;
+left: 248px;
+top: 517px;
+
+}
 
 }
 
@@ -55,10 +66,11 @@ if(isset($_SESSION["loggedin"]))
 
 <body>  
 
-
+<div class="whatsapp">
     <a href="https://www.whatsapp.com/?lang=pt_br">
         <img src="imagem/whatsapp.png">
     </a>
+</div>
 
     <div class="localizacao"> 
     <a href="https://www.google.com.br/maps/@-23.0720325,-52.4481016,20z?hl=pt-BR"><img src="imagem/localizacao.png"></a>
