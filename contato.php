@@ -44,8 +44,8 @@ color: white;
     position: absolute;
 font-size:30px;
 height: 48px;
-left: 200px;
-top: 80px;
+left: 216px;
+top: 155px;
 }
 
 </style>
