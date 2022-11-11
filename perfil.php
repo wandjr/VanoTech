@@ -85,7 +85,6 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             $data_nascimento=$resultado['data_nascimento'];
             $cod_usuario=$resultado['cod_usuario'];
             $ImgRaw=$resultado['foto'];
-
            
             $ImgRaw         = str_replace("base64,", "", $ImgRaw);
 
@@ -99,6 +98,7 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
 <br><br>
     <form id="formulario" action="" method="POST" enctype="multipart/form-data" >
     <div class="informacoes_perfil">
+    <?php echo("<img id='imagem' src='".$ImgDecode."'>"); ?>
         <div id="foto" onclick="Trocar_imagem();">
             <canvas id="outputImage" width="176px" height="174px">
             </canvas>
@@ -202,6 +202,14 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             <td><a href='editar_contrato.php?cod_contrato=$cod_contrato'><img src='imagem/editar.png' width='20px'></a></td>
             </tr>");
         }
+
+        
+        session_start();
+        
+        $_SESSION['preco'] = $resultado['preco'];
+        $_SESSION['tipo_servico'] = $resultado['tipo_servico'];
+        $_SESSION['duracao_contrato'] = $resultado['duracao_contrato'];
+        $_SESSION['cod_contrato'] = $resultado['cod_contrato'];
         ?>
     
     </table>

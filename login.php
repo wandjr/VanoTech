@@ -8,7 +8,7 @@
         $comando -> bindValue(":email",$email);
 
         $comando -> execute();
-
+        
         if($comando->rowCount()== 1){
             $resultado = $comando->fetch();
             if ($resultado["senha"]== MD5($senha)){

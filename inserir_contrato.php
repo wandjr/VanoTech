@@ -17,7 +17,29 @@
     $tipo_servico = $_POST["tipo_servico"];
     $duracao_contrato = $_POST["duracao_contrato"];
 
-    $comando = $pdo -> prepare("INSERT INTO contrato(tipo_servico,duracao_contrato,cod_usuario) VALUES(:tipo_servico,:duracao_contrato,:cod_usuario)");
+    if($tipo_servico=="Recursos Humanos");
+    {
+        $preco = "25";
+    }
+    if($tipo_servico=="Contabilidade");
+    {
+        $preco = "45";
+    }
+    if($tipo_servico=="Fiscal (Tax)");
+    {
+        $preco = "35";
+    }
+    if($tipo_servico=="Direito Societário");
+    {
+        $preco = "30";
+    }
+    if($tipo_servico=="Assessoria e Consultoria Empresarial");
+    {
+        $preco = "60";
+    }
+
+    $comando = $pdo -> prepare("INSERT INTO contrato(preco,tipo_servico,duracao_contrato,cod_usuario) VALUES(:preco,:tipo_servico,:duracao_contrato,:cod_usuario)");
+    $comando->bindValue(":preco", $preco);
     $comando->bindValue(":tipo_servico", $tipo_servico);
     $comando->bindValue(":duracao_contrato", $duracao_contrato);
     $comando->bindValue(":cod_usuario", $cod_usuario);
