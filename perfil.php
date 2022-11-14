@@ -46,6 +46,27 @@
     width: 150px;
     height: 150px;
     border-radius: 200px;
+    border-color: black;
+    border-width: 30px;
+}
+
+#caixa_info_nome
+{
+    border-color: #042653;
+    color: black;
+    border-style: none;
+    background: #042653;
+    text-align: center;
+}
+
+.caixa_info
+{
+    margin-top: 10px;
+    height: 20px;
+    border-color: #042653;
+    color: black;
+    border-style: none;
+    background: white;
 }
     </style>
 
@@ -57,9 +78,8 @@ echo        '<div class="menu">
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
                 <a href="home.php?email='.urlencode($_SESSION['email']). '"><button class="botao">HOME</button></a>
                 <a href="servicos.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SERVIÇOS</button></a>
-                <a href="trabalhe_conosco.php?email='.urlencode($_SESSION['email']). '"><button class="botao">TRABALHE CONOSCO</button></a>
+                <a href="cadastro.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CADASTRO</button></a>
                 <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
-                <a href="contato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CONTATO</button></a>
                 <button class="botao_selecionado">PERFIL</button>
             </div>';
 
@@ -108,9 +128,9 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
         <br>
 
         
-            <input type="text" class="caixa_info" value="<?php echo($nome) ?>" name="nome">
+            <input type="text" id="caixa_info_nome" value="<?php echo($nome) ?>" name="nome">
 
-            <div>Sobrenome</div>
+            <div class="">Sobrenome</div>
             <input type="text" class="caixa_info" value="<?php echo($sobrenome) ?>" name="sobrenome">
             
             <div>E-mail</div>
@@ -156,7 +176,7 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
         $comando -> bindValue(":cod_usuario",$cod_usuario);
 
         $comando -> execute();
-        
+
         $resultado = $comando->fetchAll();
         foreach($resultado as $linha)
         {
@@ -202,14 +222,50 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             <td><a href='editar_contrato.php?cod_contrato=$cod_contrato'><img src='imagem/editar.png' width='20px'></a></td>
             </tr>");
         }
+      
+        if(isset($_SESSION["adm"]) == 1)
+        {
+            $comando = $pdo -> prepare("SELECT * FROM usuario");
+    
+            $comando -> execute();
+            $resultado = $comando->fetchAll();
+            foreach($resultado as $linha)
+            {
+                $cod_usuario=$linha["cod_usuario"];
+                $nome=$linha["nome"];
+                $sobrenome=$linha["sobrenome"];
+                $email=$linha["email"];
+                $senha=$linha["senha"];
+                $telefone=$linha["telefone"];
+                $cpf=$linha["cpf"];
+                $data_nascimento=$linha["data_nascimento"];
+            echo("
+            <div>Usuários</div>
 
-        
-        session_start();
-        
-        $_SESSION['preco'] = $resultado['preco'];
-        $_SESSION['tipo_servico'] = $resultado['tipo_servico'];
-        $_SESSION['duracao_contrato'] = $resultado['duracao_contrato'];
-        $_SESSION['cod_contrato'] = $resultado['cod_contrato'];
+            <table border='2'>
+            <tr>
+                <td>Código</td>
+                <td>Nome</td>
+                <td>Sobrenome</td>
+                <td>Email</td>
+                <td>Senha</td>
+                <td>Telefone</td>
+                <td>CPF</td>
+                <td>Data de Nascimento</td>
+            </tr>
+            <tr>
+            <td>$cod_usuario</td>
+            <td>$nome</td>
+            <td>$sobrenome</td>
+            <td>$email</td>
+            <td></td>
+            <td>$telefone</td>
+            <td>$cpf</td>
+            <td>$data_nascimento</td>
+            <td><a href='editar_usuario.php?cod_usuario=$cod_usuario'><img src='imagem/editar.png' width='20px'></a></td>
+            </tr>");
+        }
+    }
         ?>
     
     </table>

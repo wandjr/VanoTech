@@ -13,9 +13,8 @@
             <img src="imagem/logo.png" id="logo" width="70px" height="70px">
             <a href="home.php"><button class="botao">HOME</button></a>
             <a href="servicos.php"><button class="botao">SERVIÇOS</button></a>
-            <a href="trabalhe_conosco.php"><button class="botao">TRABALHE CONOSCO</button></a>
+            <button class="botao_selecionado">CADASTRO</button>
             <a href="simulacao_de_Contrato.php"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
-            <a href="contato.php"><button class="botao">CONTATO</button></a>
             <a href="perfil.php"> <button class="botao">PERFIL</button></a>
     </div>
 

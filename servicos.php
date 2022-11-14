@@ -20,9 +20,8 @@ if(isset($_SESSION["loggedin"]))
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
                 <a href="home.php?email='.urlencode($_SESSION['email']). '"><button class="botao">HOME</button></a>
                 <button class="botao_selecionado">SERVIÇOS</button>
-                <a href="trabalhe_conosco.php?email='.urlencode($_SESSION['email']). '"><button class="botao">TRABALHE CONOSCO</button></a>
+                <a href="cadastro.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CADASTRO</button></a>
                 <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
-                <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CONTATO</button></a>
                 <a href="perfil.php?email='.urlencode($_SESSION['email']). '"><button class="botao">PERFIL</button></a>
             </div>';
 }else{
@@ -30,9 +29,8 @@ if(isset($_SESSION["loggedin"]))
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
                 <a href="home.php"><button class="botao">HOME</button></a>
                 <button class="botao_selecionado">SERVIÇOS</button>
-                <a href="trabalhe_conosco.php"><button class="botao">TRABALHE CONOSCO</button></a>
+                <a href="cadastro.php"><button class="botao">CADASTRO</button></a>
                 <a href="simulacao_de_Contrato.php"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
-                <a href="contato.php"><button class="botao">CONTATO</button></a>
                 <a href="perfil.php"> <button class="botao">PERFIL</button></a>
             </div>';
 }

@@ -24,7 +24,7 @@
                     header("location:perfil.php?email=$email");
 
             }else{
-                echo("Email ou senha inválidos $senha");
+                echo("Email ou senha inválidos");
             }
         }else{
             echo("Email ou senha Inválido");

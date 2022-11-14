@@ -75,26 +75,6 @@ body,html
     text-align: center;
 }
 
-.conteudo
-{
-    margin-top: 30px; 
-    width: 800px;
-    margin-left: -400px;
-    display: flex;
-    flex-direction: column;
-}
-
-.paragrafos
-{
-    text-indent: 40px;
-    text-align: justify;
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 47em;
-    margin-top: 10px;
-}
-
 #paragrafos_servico
 {
     text-indent: 40px;
@@ -345,4 +325,14 @@ body {
     border-radius: 50px;
     width: 250px;
     height: 50px;
+}
+
+#outputImage
+{
+    
+    width: 150px;
+    height: 150px;
+    border-radius: 200px;
+    border-color: black;
+    border-width: 30px;
 }

@@ -13,30 +13,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible">
-    <title>SIMULAÇÃO DE CONTARTO</title>
+    <title>CADASTRO</title>
     <link rel="stylesheet" href="vanotech.css" />
-    <link href='https://fonts.googleapis.com/css?family=Volkhov' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
 </head>
 
-<?php
+<style>
 
-//session_start();
+.Tipo
+{
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    color: white;
+}
+
+.Escolha
+{
+    text-align: center;
+    width: 600px;
+    height: 100px;
+
+    font-family: 'Inter';
+    border-radius: 90px;
+    font-size: 20px;
+    border-width: 5px;
+    border-color: #5F9F9F;
+}
+
+.tempo
+{
+    text-align: center;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    color:white;
+}
+
+.box
+{
+    text-align: center;
+    box-sizing: border-box;
+    width: 594px;
+    height: 109px;
+    border-radius: 90px;
+}
+</style>
+
+<?php
 
 echo        '<div class="menu">
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
                 <a href="home.php?email='.urlencode($_SESSION['email']). '"><button class="botao">HOME</button></a>
-                <a href="servicos.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SERVIÇOS</button>
-                <a href="trabalhe_conosco.php?email='.urlencode($_SESSION['email']). '"><button class="botao">TRABALHE CONOSCO</button></a>
-                <button class="botao_selecionado">SIMULAÇÃO DE CONTRATO</button>
-                <a href="contato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CONTATO</button></a>
+                <a href="servicos.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SERVIÇOS</button></a>
+                <a href="cadastro.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CADASTRO</button></a>
+                <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
                 <a href="perfil.php?email='.urlencode($_SESSION['email']). '"><button class="botao">PERFIL</button></a>
             </div>';
 ?>
 
 <body>
-    <div>Tipo de Serviço</div>
-    <select>
-        <option disabled selected>- Escolha o Serviço -</option>
+
+<form action="realizar_simulacao.php" method="POST">
+
+<br><br>
+    <div class="Tipo">Tipo de serviço</div>
+
+    <br><br>
+    <select class="Escolha" name="tipo_servico">
+        <option selected disabled>- Escolha o Serviço -</option>
         <option>Recursos Humanos</option>
         <option>Contabilidade</option>
         <option>Fiscal (Tax)</option>
@@ -44,43 +90,23 @@ echo        '<div class="menu">
         <option>Assessoria e Consultoria Empresarial</option>
     </select>
 
-    <select>
-        <option disabled selected>- Escolha o Tempo de Contrato -</option>
-        <option>1 a 6 meses</option>
-        <option>1 a 2 anos</option>
-        <option>1 mês</option>
+    <br><br>
+    <div class="tempo">Tempo do contrato</div>
+
+    <br><br>
+    <select class="Escolha" name="duracao_contrato">
+        <option selected disabled>- Escolha o Tempo de Contrato -</option>
+        <option value="1">1 dia</option>
+        <option value="30">1 mês</option>
+        <option value="180">6 meses</option>
+        <option value="365">1 ano</option>
+        <option value="730">2 anos</option>
     </select>
 
-    <button>Simulação do Contrato</button>
-
-    <table border="2">
-        <tr>
-            <td>Código do Contrato</td>
-            <td>Contratante</td>
-            <td>Serviço</td>
-            <td>Tempo de Contrato</td>
-            <td>Local de Encontro</td>
-            <td>Profissional</td>
-            <td>Preço Total</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+    <br><br>
+    <input type="submit" value="Contratar Serviço" class="box">
+    </form>
 </body>
+
+
 </html>

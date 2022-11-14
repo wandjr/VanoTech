@@ -59,14 +59,6 @@
     height: 109px;
     border-radius: 90px;
 }
-
-.resultado
-{
-    text-align: center;
-    width: 949px;
-    height: 151px;
-    background: #FFFFFF;
-}
 </style>
 
 <?php
@@ -75,9 +67,8 @@ echo        '<div class="menu">
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
                 <a href="home.php?email='.urlencode($_SESSION['email']). '"><button class="botao">HOME</button></a>
                 <a href="servicos.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SERVIÇOS</button></a>
-                <a href="trabalhe_conosco.php?email='.urlencode($_SESSION['email']). '"><button class="botao">TRABALHE CONOSCO</button></a>
+                <a href="cadastro.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CADASTRO</button></a>
                 <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
-                <a href="contato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CONTATO</button></a>
                 <a href="perfil.php?email='.urlencode($_SESSION['email']). '"><button class="botao">PERFIL</button></a>
             </div>';
 ?>
@@ -115,19 +106,6 @@ echo        '<div class="menu">
     <br><br>
     <input type="submit" value="Contratar Serviço" class="box">
     </form>
-
-    <br><br>
-    <div class="resultado"></div>
-
-    
-
-
-    
-
-
-
-        
-
 </body>
 
 

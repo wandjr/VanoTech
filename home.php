@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible">
     <title>HOME</title>
-    <link rel="stylesheet" href="vanotech.css" />
+    <link rel="stylesheet" href="vanotech.css">
     <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
     <script src="jquery-3.6.0.min.js"></script>
     <script src="vanotech.js"></script>
@@ -17,6 +17,25 @@
     width: 100%;
     height: 600px;
     background-color: #e1e1e1;
+}
+
+.conteudo
+{
+    margin-top: 30px; 
+    width: 90%;
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+}
+
+.paragrafos
+{
+    text-indent: 40px;
+    text-align: justify;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }
 </style>
 
@@ -32,9 +51,8 @@ if(isset($_SESSION["loggedin"]))
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
                 <button class="botao_selecionado">HOME</button>
                 <a href="servicos.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SERVIÇOS</button></a>
-                <a href="trabalhe_conosco.php?email='.urlencode($_SESSION['email']). '"><button class="botao">TRABALHE CONOSCO</button></a>
+                <a href="cadastro.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CADASTRO</button></a>
                 <a href="simulacao_de_Contrato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
-                <a href="contato.php?email='.urlencode($_SESSION['email']). '"><button class="botao">CONTATO</button></a>
                 <a href="perfil.php?email='.urlencode($_SESSION['email']). '"><button class="botao">PERFIL</button></a>
             </div>';
 }else{
@@ -42,9 +60,8 @@ if(isset($_SESSION["loggedin"]))
                 <img src="imagem/logo.png" id="logo" width="70px" height="70px">
                 <button class="botao_selecionado">HOME</button>
                 <a href="servicos.php"><button class="botao">SERVIÇOS</button></a>
-                <a href="trabalhe_conosco.php"><button class="botao">TRABALHE CONOSCO</button></a>
+                <a href="cadastro.php"><button class="botao">CADASTRO</button></a>
                 <a href="simulacao_de_Contrato.php"><button class="botao">SIMULAÇÃO DE CONTRATO</button></a>
-                <a href="contato.php"><button class="botao">CONTATO</button></a>
                 <a href="perfil.php"> <button class="botao">PERFIL</button></a>
             </div>';
 }
