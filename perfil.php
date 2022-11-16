@@ -87,7 +87,6 @@ echo        '<div class="menu">
 include("conecta.php");
 
 $email=$_GET["email"];
-$ImgDecode="imagem/pessoa.png";
 
 $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
 
@@ -104,11 +103,6 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             $cpf=$resultado['cpf'];
             $data_nascimento=$resultado['data_nascimento'];
             $cod_usuario=$resultado['cod_usuario'];
-            $ImgRaw=$resultado['foto'];
-           
-            $ImgRaw         = str_replace("base64,", "", $ImgRaw);
-
-            $ImgDecode      = base64_decode($ImgRaw);
             
         }
 ?>
@@ -118,13 +112,8 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
 <br><br>
     <form id="formulario" action="" method="POST" enctype="multipart/form-data" >
     <div class="informacoes_perfil">
-    <?php echo("<img id='imagem' src='".$ImgDecode."'>"); ?>
-        <div id="foto" onclick="Trocar_imagem();">
-            <canvas id="outputImage" width="176px" height="174px">
-            </canvas>
-        </div>
+            <img src="imagem/perfil.png">
 
-        <input type="file" id="meu_upload" name="foto_perfil">
         <br>
 
         
@@ -171,11 +160,20 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
         <td></td>
     </tr>
         <?php 
+        if(!isset($_SESSION["adm"]) == 1)
+        {
         $comando = $pdo -> prepare("SELECT * From contrato where cod_usuario = :cod_usuario");
 
         $comando -> bindValue(":cod_usuario",$cod_usuario);
 
         $comando -> execute();
+        }
+        if(isset($_SESSION["adm"]) == 1)
+        {
+            $comando = $pdo -> prepare("SELECT * FROM usuario");
+
+            $comando -> execute();
+        }
 
         $resultado = $comando->fetchAll();
         foreach($resultado as $linha)
@@ -222,7 +220,10 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             <td><a href='editar_contrato.php?cod_contrato=$cod_contrato'><img src='imagem/editar.png' width='20px'></a></td>
             </tr>");
         }
-      
+        ?>
+        </table>
+        
+        <?php
         if(isset($_SESSION["adm"]) == 1)
         {
             $comando = $pdo -> prepare("SELECT * FROM usuario");
@@ -263,7 +264,8 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
             <td>$cpf</td>
             <td>$data_nascimento</td>
             <td><a href='editar_usuario.php?cod_usuario=$cod_usuario'><img src='imagem/editar.png' width='20px'></a></td>
-            </tr>");
+            </tr>
+            </table>");
         }
     }
         ?>
@@ -289,86 +291,5 @@ function Abrir_cadastro()
 {
   window.open("cadastro.php", "_self");
 }
-
-function Trocar_imagem()
-{
-    meu_upload.click();
-}
-
-$(document).on("change", "#meu_upload", function(e) {
-    showThumbnail(this.files);
-});
-
-const inputImage = new Image();
-
-function showThumbnail(files) {
-    if (files && files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) 
-        {
-            //foto.style.backgroundImage = 'url(' +e.target.result+ ')';
-            
-            inputImage.src = e.target.result;
-
-            crop(inputImage.src, 1/2)
-        }
-        
-        reader.readAsDataURL(files[0]);
-    }
-}
-
-var outputImageAspectRatio = 1;
-
-function crop(url, aspectRatio) 
-{
-    
-// we return a Promise that gets resolved with our canvas element
-return new Promise(resolve => 
-{
-    inputImage.onload = () => 
-    {
-
-        var outputImage = document.getElementById('outputImage');
-
-        // set it to the same size as the image
-        outputImage.width = inputImage.naturalWidth;
-        outputImage.height = inputImage.naturalHeight;
-
-        var inputWidth = inputImage.naturalWidth;
-        var inputHeight = inputImage.naturalHeight;
-
-        var inputImageAspectRatio = inputWidth / inputHeight;
-    
-        // if it's bigger than our target aspect ratio
-        let outputWidth = inputWidth;
-        let outputHeight = inputHeight;
-
-        if (inputImageAspectRatio > outputImageAspectRatio) 
-        {
-            outputWidth = inputHeight * outputImageAspectRatio;
-        } 
-        else if (inputImageAspectRatio < outputImageAspectRatio) 
-        {
-            outputHeight = inputHeight / outputImageAspectRatio;
-        }
-
-        var outputX = (outputWidth - inputWidth) * .5;
-        var outputY = (outputHeight - inputHeight) * .5;
-
-        // set it to the same size as the image
-        outputImage.width = outputWidth;
-        outputImage.height = outputHeight;
-
-        // draw our image at position 0, 0 on the canvas
-
-        var ctx = outputImage.getContext('2d');
-        ctx.drawImage(inputImage, outputX, outputY);  
-    };
-})
-}
-
-    inputImage.src = "<?php echo('../imagem/teste.jpg');?>";
-crop(inputImage.src, 1/2)
 </script>
 </html>
