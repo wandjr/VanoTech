@@ -160,14 +160,6 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
         <td></td>
     </tr>
         <?php 
-        if(!isset($_SESSION["adm"]) == 1)
-        {
-        $comando = $pdo -> prepare("SELECT * From contrato where cod_usuario = :cod_usuario");
-
-        $comando -> bindValue(":cod_usuario",$cod_usuario);
-
-        $comando -> execute();
-        }
         if(isset($_SESSION["adm"]) == 1)
         {
             $comando = $pdo -> prepare("SELECT * FROM usuario");
