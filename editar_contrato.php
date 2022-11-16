@@ -17,7 +17,6 @@
 </style>
 
 <body>  
-
 <form action="atualizar_contrato.php" method="POST">
 
 <div>Local do Serviço</div>

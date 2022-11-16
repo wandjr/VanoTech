@@ -47,7 +47,7 @@
     $comando->execute();
 
     header("location:perfil.php?email=$email");
-    
+
     unset($comando);
     unset($pdo);
 ?>

@@ -160,13 +160,29 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
         <td></td>
     </tr>
         <?php 
-        if(isset($_SESSION["adm"]) == 1)
+        if($_SESSION["adm"] == 1)
         {
-            $comando = $pdo -> prepare("SELECT * FROM usuario");
-
+            $comando = $pdo -> prepare("SELECT * FROM contrato");
+    
             $comando -> execute();
-        }
+        }else{
 
+        $comando = $pdo -> prepare("SELECT * From contrato where cod_usuario = :cod_usuario");
+
+        $comando -> bindValue(":cod_usuario",$cod_usuario);
+
+        $comando -> execute();
+    }
+    if($comando->rowCount()== 1){
+        $resultado = $comando->fetch();
+
+        $_SESSION['cod_contrato'] = $resultado['cod_contrato'];
+        $_SESSION['preco'] = $resultado['preco'];
+        $_SESSION['duracao_contrato'] = $resultado['duracao_contrato'];
+        $_SESSION['tipo_servico'] = $resultado['tipo_servico'];
+        $_SESSION['cod_usuario'] = $resultado['cod_usuario'];
+        $_SESSION['funcionario'] = $resultado['funcionario'];
+    }
         $resultado = $comando->fetchAll();
         foreach($resultado as $linha)
         {
@@ -216,22 +232,8 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
         </table>
         
         <?php
-        if(isset($_SESSION["adm"]) == 1)
+        if($_SESSION["adm"] == 1)
         {
-            $comando = $pdo -> prepare("SELECT * FROM usuario");
-    
-            $comando -> execute();
-            $resultado = $comando->fetchAll();
-            foreach($resultado as $linha)
-            {
-                $cod_usuario=$linha["cod_usuario"];
-                $nome=$linha["nome"];
-                $sobrenome=$linha["sobrenome"];
-                $email=$linha["email"];
-                $senha=$linha["senha"];
-                $telefone=$linha["telefone"];
-                $cpf=$linha["cpf"];
-                $data_nascimento=$linha["data_nascimento"];
             echo("
             <div>Usuários</div>
 
@@ -245,21 +247,38 @@ $comando = $pdo -> prepare("SELECT * From usuario where email = :email");
                 <td>Telefone</td>
                 <td>CPF</td>
                 <td>Data de Nascimento</td>
-            </tr>
-            <tr>
-            <td>$cod_usuario</td>
-            <td>$nome</td>
-            <td>$sobrenome</td>
-            <td>$email</td>
-            <td></td>
-            <td>$telefone</td>
-            <td>$cpf</td>
-            <td>$data_nascimento</td>
-            <td><a href='editar_usuario.php?cod_usuario=$cod_usuario'><img src='imagem/editar.png' width='20px'></a></td>
-            </tr>
-            </table>");
+            </tr>");
+            $comando = $pdo -> prepare("SELECT * FROM usuario");
+    
+            $comando -> execute();
+
+            $resultado = $comando->fetchAll();
+            foreach($resultado as $linha)
+            {
+                $cod_usuario=$linha["cod_usuario"];
+                $nome=$linha["nome"];
+                $sobrenome=$linha["sobrenome"];
+                $email=$linha["email"];
+                $senha=$linha["senha"];
+                $telefone=$linha["telefone"];
+                $cpf=$linha["cpf"];
+                $data_nascimento=$linha["data_nascimento"];
+           
+           echo( "<tr>
+                <td>$cod_usuario</td>
+                <td>$nome</td>
+                <td>$sobrenome</td>
+                <td>$email</td>
+                <td></td>
+                <td>$telefone</td>
+                <td>$cpf</td>
+                <td>$data_nascimento</td>
+                <td><a href='editar_usuario.php?cod_usuario=$cod_usuario'><img src='imagem/editar.png' width='20px'></a></td>
+            </tr>");
+            }
+            echo("</table>");
         }
-    }
+    else{}
         ?>
     
     </table>
