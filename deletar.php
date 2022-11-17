@@ -9,29 +9,23 @@
     
     $comando->execute();
 
-    echo($email);
-
     if($comando->rowCount()== 1){
         $resultado = $comando->fetch();
-        $cod_usuario = $resultado['cod_usuario'];
+        $cod_usuario = $resultado["cod_usuario"];
     }
 
-    //comando sql.
+    $cod_usuario = $_GET["cod_usuario"];
+
     $comando = $pdo->prepare("DELETE FROM usuario WHERE cod_usuario = :cod_usuario");
 
-    //insere valores das variaveis no comando sql.
-    $comando->bindValue(':cod_usuario',$cod_usuario);
+    $comando->bindValue(":cod_usuario",$cod_usuario);
     
-    //executa a consulta no banco de dados.
     $comando->execute();
 
-    session_start();
     $_SESSION['loggedin'] = false;
 
-    //redireciona para a pagina informada.
     header("location:cadastro.php");
 
-    //Fecha declaração e conexão.
     unset($comando);
     unset($pdo);
 ?>
